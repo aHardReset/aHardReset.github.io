@@ -1,0 +1,160 @@
+.work-experience {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 30px;
+  margin: 2rem auto;
+}
+
+@media (min-width: 768px) {
+  .work-experience {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+}
+
+.work-experience-header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.experience-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 100%;
+}
+
+.work-item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+/* add a transform: scale(1.1); to work-item on hover */
+.work-item:hover {
+  transform: scale(1.1);
+  transition: transform 0.5s ease;
+  background-color: darkslategrey;
+}
+
+.company-logo {
+  width: 12%;
+  margin-right: 2%;
+}
+
+@media (max-width: 768px) {
+  .company-logo {
+    width: 20%;
+    margin-bottom: 1rem;
+  }
+}
+
+.work-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 75%;
+}
+
+@media (max-width: 768px) {
+  .work-info {
+    width: 100%;
+  }
+}
+
+.company-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 0.5rem;
+  min-height: 1.5rem;
+}
+
+.headline-time-window {
+  display: flex;
+  align-items: flex-end;
+  height: 100%;
+}
+
+.headline {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 1.3rem;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.time-window {
+  font-size: 1rem;
+  color: gray;
+  margin-bottom: 0.5rem;
+  height: 100%;
+  padding-left: 1.5rem;
+  /* add an italic style*/
+  font-style: italic;
+}
+
+.description {
+  font-size: 1.2rem;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.toggle-load-more-experience-button {
+  background: transparent;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  margin-top: 1rem;
+}
+
+.toggle-load-more-experience-button:hover {
+  background: #fff;
+  color: #333;
+}
+
+.links {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.links a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+  font-size: 0.8em;
+}
+
+.links a:hover {
+  color: lightgray;
+}
+
+@media (max-width: 768px) {
+  .links {
+    flex-direction: column;
+    align-items: center;
+  }
+}
