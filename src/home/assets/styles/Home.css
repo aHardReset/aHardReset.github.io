@@ -27,6 +27,13 @@
   text-shadow: 2px 2px 4px #000000;
   color: white;
   padding-right: 30px;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .ddsadsad {
+    text-align: right;
+  }
 }
 
 .title {

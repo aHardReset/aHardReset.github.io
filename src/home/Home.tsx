@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import data from './assets/data/renderData';
 
 import './assets/styles/Home.css';
+import './assets/styles/Skills.css';
 import './assets/styles/WorkExperience.css';
 
 const loadMoreDefault = false;
@@ -127,17 +128,27 @@ function ReadMore(linkedInUrl, resumeUrl) {
   );
 }
 
-function Skills(skills) {
+*/
+
+function Skills(){
+  const skills = data.skills;
+
   return (
-    <div className='skills'>
-      {skills.map(item => (
-        <img src={item.icon} alt={item.name} key={item.name} />
-      ))}
+    <div className="skills-container">
+    <div className="skills">
+      <h2 className="section-title">Skills</h2>
+      <div className="skills-grid">
+        {skills.map((skill: any) => (
+          <div className="skill-card" key={skill.name}>
+            <img src={skill.image} alt={skill.name} />
+            <p className="skill-footer">{skill.name}</p>
+          </div>
+        ))}
+      </div>
+    </div>
     </div>
   );
-}
-
-*/
+};
 
 function Home() {
   if (!data) {
@@ -150,6 +161,7 @@ function Home() {
       <AboutMe />
       <ContactInfo />
       <WorkExperience />
+      <Skills />
     </div>
   );
 }

@@ -1,12 +1,19 @@
 import linkedInIcon from '../images/linkedin-icon.svg';
 import gmailIcon from '../images/gmail-icon.svg';
 import teradataLogo from '../images/teradata-logo.jpg';
+
+interface Skill {
+  name: string;
+  image: string;
+  projects: string[];
+}
+
 const data: any = {};
 
 data.cover = {
   image:
     'https://images.unsplash.com/photo-1520034475321-cbe63696469a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80',
-  name: 'Aaron Contreras Garibay',
+  name: 'Aaron Garibay',
   title: 'Software Engineer',
 };
 data.aboutMe = {
@@ -69,11 +76,53 @@ data.formalInfo = [
     name: 'Professional Resume',
   },
 ];
-data.skills = [
+
+
+const skills: Skill[] = [
   {
-    icon: 'https://example.com/images/javascript.png',
     name: 'JavaScript',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/480px-Unofficial_JavaScript_logo_2.svg.png',
+    projects: ['Project 1', 'Project 2', 'Project 3'],
+  },
+  {
+    name: 'Python',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1869px-Python-logo-notext.svg.png',
+    projects: ['Project 4', 'Project 5', 'Project 6'],
+  },
+  {
+    name: 'JavaScript',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/480px-Unofficial_JavaScript_logo_2.svg.png',
+    projects: ['Project 1', 'Project 2', 'Project 3'],
+  },
+  {
+    name: 'Python',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1869px-Python-logo-notext.svg.png',
+    projects: ['Project 4', 'Project 5', 'Project 6'],
+  },
+  {
+    name: 'JavaScript',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/480px-Unofficial_JavaScript_logo_2.svg.png',
+    projects: ['Project 1', 'Project 2', 'Project 3'],
+  },
+  {
+    name: 'Python',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1869px-Python-logo-notext.svg.png',
+    projects: ['Project 4', 'Project 5', 'Project 6'],
+  },
+  {
+    name: 'JavaScript',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/480px-Unofficial_JavaScript_logo_2.svg.png',
+    projects: ['Project 1', 'Project 2', 'Project 3'],
+  },
+  {
+    name: 'Python',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1869px-Python-logo-notext.svg.png',
+    projects: ['Project 4', 'Project 5', 'Project 6'],
   },
 ];
+
+data.skills = skills;
+
+
 
 export default data;
