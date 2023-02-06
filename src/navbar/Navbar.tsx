@@ -1,76 +1,53 @@
-import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import { FaBars, FaTimes } from 'react-icons/fa';
+
+import data from '../assets/data/renderData';
+
 import './assets/styles/Navbar.css';
 
-function NavbarLeft() {
-  return (
-    <div className='left-section'>
-      <Link to='/'>
-        <img
-          src='https://w7.pngwing.com/pngs/403/269/png-transparent-react-react-native-logos-brands-in-colors-icon-thumbnail.png'
-          alt='logo'
-          className='logo'
-        />
-      </Link>
-    </div>
-  );
-}
+const navigationAnchors = data.navigationAnchors;
 
-function NavbarCenter() {
-  return (
-    <div className='center-section'>
-      <input
-        type='text'
-        className='search-bar'
-        placeholder='Search'
-        value=' Search bar '
-      />
-    </div>
-  );
-}
+const Navbar = () => {
+  const [isOpen, setOpen] = useState(false);
 
-function NavbarRight() {
-  return (
-    <div className='right-section'>
-      <Link
-        to='/'
-        className={`nav-link ${location.pathname === '/' ? 'active' : ''}`}
-      >
-        Home
-      </Link>
-      <Link
-        to='/about'
-        className={`nav-link ${location.pathname === '/about' ? 'active' : ''}`}
-      >
-        About
-      </Link>
-      <Link
-        to='/portfolio'
-        className={`nav-link ${
-          location.pathname === '/portfolio' ? 'active' : ''
+  const Menu = () => {
+    return (
+      <div
+        className={`navbar-menu-options-container ${
+          isOpen ? 'show-navbar-menu' : ''
         }`}
       >
-        Portfolio
-      </Link>
-      <Link
-        to='/blog'
-        className={`nav-link ${location.pathname === '/blog' ? 'active' : ''}`}
-      >
-        Blog
-      </Link>
-    </div>
-  );
-}
-
-// @ts-ignore
-function Navbar() {
+        <FaTimes className='navbar-close-menu' onClick={() => setOpen(false)} />
+        <ul className='navbar-menu-options'>
+          {navigationAnchors.map((anchor: any, index: number) => (
+            <a
+              key={anchor.name + index}
+              onClick={() => setOpen(false)}
+              href={`${anchor.anchor}`}
+            >
+              <li className='navbar-menu-option'>{anchor.label}</li>
+            </a>
+          ))}
+          {/* Add more menu options as needed */}
+        </ul>
+      </div>
+    );
+  };
 
   return (
     <nav className='navbar'>
-      <NavbarLeft />
-      <NavbarCenter />
-      <NavbarRight />
+      <FaBars className='navbar-hamburger-menu' onClick={() => setOpen(true)} />
+      <Menu />
+      <div className='navbar-brand-logo'>
+        <img
+          src={
+            'https://static.wikia.nocookie.net/manhunt/images/a/a3/Pickman_Project_logo.PNG/revision/latest/scale-to-width-down/200?cb=20160425001532&path-prefix=es'
+          }
+          alt='Logo'
+        />
+      </div>
     </nav>
   );
-}
+};
 
 export default Navbar;

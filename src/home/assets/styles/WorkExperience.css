@@ -1,38 +1,3 @@
-.work-experience {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding-top: 30px;
-  margin: 2rem auto;
-}
-
-@media (min-width: 768px) {
-  .work-experience {
-    max-width: 800px;
-    margin: 0 auto;
-  }
-}
-
-.work-experience-header {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  margin-bottom: 1rem;
-  font-size: 2rem;
-  font-weight: bold;
-}
-
-.section-header {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  margin-bottom: 1rem;
-  font-size: 2rem;
-  font-weight: bold;
-  color: #fff;
-}
-
 .experience-content {
   display: flex;
   flex-wrap: wrap;
@@ -41,17 +6,19 @@
 }
 
 .work-item {
+  background-color: #34495e;
+  border-radius: 10px;
   display: flex;
   align-items: center;
   width: 100%;
   margin-bottom: 2rem;
+  transition: all 0.3s ease;
 }
 
 /* add a transform: scale(1.1); to work-item on hover */
 .work-item:hover {
-  transform: scale(1.1);
-  transition: transform 0.5s ease;
-  background-color: darkslategrey;
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
 
 .company-logo {
@@ -71,6 +38,7 @@
   flex-direction: column;
   justify-content: center;
   width: 75%;
+  padding: 2rem 0;
 }
 
 @media (max-width: 768px) {
@@ -118,43 +86,18 @@
   margin-bottom: 0.5rem;
 }
 
-.toggle-load-more-experience-button {
-  background: transparent;
-  border: 2px solid #fff;
-  border-radius: 5px;
+.toggle-load-more-experience-container .toggle-load-more-experience {
+  background-color: #3498db;
   color: #fff;
   padding: 0.5rem 1rem;
-  font-size: 1.2rem;
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
-  margin-top: 1rem;
-}
-
-.toggle-load-more-experience-button:hover {
-  background: #fff;
-  color: #333;
-}
-
-.links {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-}
-
-.links a {
-  color: white;
+  border-radius: 10px;
   text-decoration: none;
-  margin: 0 10px;
-  font-size: 0.8em;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
-.links a:hover {
-  color: lightgray;
-}
-
-@media (max-width: 768px) {
-  .links {
-    flex-direction: column;
-    align-items: center;
-  }
+.toggle-load-more-experience-container .toggle-load-more-experience:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
