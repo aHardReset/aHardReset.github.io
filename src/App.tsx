@@ -3,9 +3,6 @@ import Home from './home/Home';
 import Footer from './footer/Footer';
 import { BrowserRouter } from 'react-router-dom';
 import './assets/styles/App.css';
-import './navbar/assets/scripts/navbar.js';
-
-
 
 function App() {
   return (

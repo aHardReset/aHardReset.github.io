@@ -1,5 +1,5 @@
 .home {
-  background-color: #2f35429c;
+  background-color: #2f3542;
   padding-top: 60px; /* this should match the height of the navbar + 10%*/
   min-height: calc(
     100vh - 80px
@@ -11,7 +11,7 @@
 }
 
 .common-container:hover {
-  background-color: #2f3542;
+  background-color: #456370;
 }
 
 @media (min-width: 768px) {

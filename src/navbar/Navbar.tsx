@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
 
 import data from '../assets/data/renderData';
+import ahr from './assets/images/ahr.png';
 
 import './assets/styles/Navbar.css';
 
@@ -39,12 +40,7 @@ const Navbar = () => {
       <FaBars className='navbar-hamburger-menu' onClick={() => setOpen(true)} />
       <Menu />
       <div className='navbar-brand-logo'>
-        <img
-          src={
-            'https://static.wikia.nocookie.net/manhunt/images/a/a3/Pickman_Project_logo.PNG/revision/latest/scale-to-width-down/200?cb=20160425001532&path-prefix=es'
-          }
-          alt='Logo'
-        />
+        <img src={ahr} alt='logo' />
       </div>
     </nav>
   );

@@ -1,5 +1,8 @@
 import { useState } from 'react';
-import data from '../assets/data/renderData';
+import data, {
+  PortfolioProject,
+  Certification,
+} from '../assets/data/renderData';
 
 import './assets/styles/Home.css';
 import './assets/styles/Cover.css';
@@ -10,24 +13,9 @@ import './assets/styles/Skills.css';
 import './assets/styles/WorkExperience.css';
 import './assets/styles/PortfolioProjects.css';
 import './assets/styles/BlogPosts.css';
+import './assets/styles/Certifications.css';
 
 const loadMoreDefault = false;
-
-const getLinkedInUrl = () => {
-  const linkedInUrl = data.contactInfo.find(
-    (item: { name: string }) => item.name === 'LinkedIn'
-  );
-  return linkedInUrl.url;
-};
-
-function HeroSection() {
-  return (
-    <div className='hero-container'>
-      <h1 className='hero-name'>Your Name</h1>
-      <h2 className='hero-title'>Software Engineer</h2>
-    </div>
-  );
-}
 
 function Cover() {
   const cover = data.cover;
@@ -58,19 +46,23 @@ function AboutMe() {
 }
 
 function ContactInfo() {
-  const contactInfo = data.contactInfo;
+  const contactCards = data.contactCards;
   return (
     <div id='contact-info' className='common-container'>
       <div className='common-container-header-container'>
         <h3 className='common-container-header'>Get in touch</h3>
       </div>
       <div className='contact-info-grid'>
-        {contactInfo.map((item: any, it: number) => (
-          <a href={item.url} key={item.name + it}>
+        {contactCards.map((item, it: number) => (
+          <a
+            href={item.url}
+            key={item.name + it}
+            target='_blank'
+            rel='noreferrer noopener'
+          >
             <div className='contact-info-item'>
-              <img src={item.icon} alt={item.name} />
-
-              <a className='contact-info-name'>{item.name}</a>
+              <item.icon className='contact-info-icon' />
+              <p className='contact-info-name'>{item.name}</p>
             </div>
           </a>
         ))}
@@ -83,13 +75,12 @@ function ContactInfo() {
 TODO:
 - Delete button on press
 - Accordion animation on press
-- Change date string to date object
 */
 
 function WorkExperience() {
   const [loadMore, setLoadMore] = useState(loadMoreDefault);
 
-  const workExperience = data.workExperience;
+  const workExperiences = data.workExperiences;
 
   const toggleLoadMoreExperience = () => {
     setLoadMore(!loadMore);
@@ -100,9 +91,9 @@ function WorkExperience() {
         <h3 className='common-container-header'>Experience</h3>
       </div>
       <div className='experience-content common-container-desktop'>
-        {workExperience
-          .slice(0, loadMore ? workExperience.length : 3)
-          .map((item: any) => (
+        {workExperiences
+          .slice(0, loadMore ? workExperiences.length : 3)
+          .map(item => (
             <div key={item.companyName} className='work-item'>
               <img
                 src={item.companyLogo}
@@ -113,15 +104,19 @@ function WorkExperience() {
                 <div className='company-name'>{item.companyName}</div>
                 <div className='headline-time-window'>
                   <div className='headline'>{item.headline}</div>
-                  <div className='time-window'>{item.timeWindow}</div>
+                  <div className='time-window'>
+                    {`${item.startDate} - ${
+                      item.endDate ? item.endDate : 'Present'
+                    }`}
+                  </div>
                 </div>
 
                 <div className='description'>{item.description}</div>
               </div>
             </div>
           ))}
-        {/* workExperience.length > 3 && !loadMore && ( */}
-        {workExperience.length > 3 && (
+        {/* workExperiences.length > 3 && !loadMore && ( */}
+        {workExperiences.length > 3 && (
           <div
             onClick={toggleLoadMoreExperience}
             className='toggle-load-more-experience-container'
@@ -134,14 +129,20 @@ function WorkExperience() {
   );
 }
 
-function PortfolioProject({ name, image, description, techStack, url }: any) {
+function PortfolioProjectComponent({
+  name,
+  image,
+  description,
+  techStack,
+  url,
+}: PortfolioProject) {
   return (
     <div className='portfolio-project'>
       <h3>{name}</h3>
       <img src={image} alt={`${name} project screenshot`} />
       <p>{description}</p>
       <ul>
-        {techStack.map((tech: any, index: number) => (
+        {techStack.map((tech, index) => (
           <li className='stackItem' key={index}>
             {tech}
           </li>
@@ -152,7 +153,7 @@ function PortfolioProject({ name, image, description, techStack, url }: any) {
           className='common-primary-button portfolio-project-buttons'
           href={url}
           target='_blank'
-          rel='noopener noreferrer'
+          rel='noreferrer noopener'
         >
           Visit project
         </a>
@@ -160,7 +161,7 @@ function PortfolioProject({ name, image, description, techStack, url }: any) {
           className='common-secondary-button portfolio-project-buttons'
           href={url}
           target='_blank'
-          rel='noopener noreferrer'
+          rel='noreferrer noopener '
         >
           Browse source code
         </a>
@@ -181,8 +182,51 @@ function PortfolioProjects() {
       </div>
       <div className='portfolio-projects common-container-desktop'>
         <div className='portfolio-projects'>
-          {portfolioProjects.map((project: any, index: number) => (
-            <PortfolioProject key={index} {...project} />
+          {portfolioProjects.map((project, index) => (
+            <PortfolioProjectComponent
+              key={project.name + index}
+              {...project}
+            />
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function CertificationComponent({ name, image, url }: Certification) {
+  return (
+    <div className='certification-card'>
+      <img src={image} alt={`${name} certification brand logo`} />
+      <div className='certification-button-container'>
+        <p className='certification-footer'>{name}</p>
+        <a
+          className='common-primary-button'
+          href={url}
+          target='_blank'
+          rel='noreferrer noopener'
+        >
+          {'See Certification Verification'}
+        </a>
+      </div>
+    </div>
+  );
+}
+
+function Certifications() {
+  const certifications = data.certifications;
+  return (
+    <div id='certifications' className='common-container'>
+      <div className='common-container-header-container'>
+        <h3 className='common-container-header'>Professional Certifications</h3>
+      </div>
+      <div className='certifications'>
+        <div className='certifications-grid'>
+          {certifications.map((certification, index) => (
+            <CertificationComponent
+              key={certification.name + index}
+              {...certification}
+            />
           ))}
         </div>
       </div>
@@ -196,14 +240,16 @@ const ReadMyBlog = () => {
       <div className='common-container-header-container'>
         <h3 className='common-container-header'>Blog</h3>
       </div>
-      <div className='read-my-blog-button-container common-container-desktop'>
-        <a
-          href='https://medium.com/@aarongaribay'
-          target='_blank'
-          rel='noreferrer'
-        >
-          <div className='read-my-blog-button'>Read My Blog</div>
-        </a>
+      <div className='certifications'>
+        <div className='read-my-blog-button-container common-container-desktop'>
+          <a
+            href='https://medium.com/@aarongaribay'
+            target='_blank'
+            rel='noreferrer noopener'
+          >
+            <div className='read-my-blog-button'>Read My Blog</div>
+          </a>
+        </div>
       </div>
     </div>
   );
@@ -219,9 +265,12 @@ function Skills() {
       </div>
       <div className='skills'>
         <div className='skills-grid'>
-          {skills.map((skill: any) => (
+          {skills.map(skill => (
             <div className='skill-card' key={skill.name}>
-              <img src={skill.image} alt={skill.name} />
+              <skill.icon.component
+                className='skill-card-icon'
+                {...skill.icon.customProps}
+              />
               <p className='skill-footer'>{skill.name}</p>
             </div>
           ))}
@@ -242,8 +291,8 @@ function Home() {
       <AboutMe />
       <ContactInfo />
       <WorkExperience />
-      <PortfolioProjects />
       <Skills />
+      <Certifications />
       <ReadMyBlog />
     </div>
   );

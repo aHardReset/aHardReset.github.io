@@ -1,80 +1,167 @@
-import linkedInIcon from '../images/linkedin-icon.svg';
-import gmailIcon from '../images/gmail-icon.svg';
-import teradataLogo from '../images/teradata-logo.jpg';
+import { FaLinkedin, FaAt, FaUserAlt, FaMedium } from 'react-icons/fa';
+
+import HarvardLogo from '../images/HarvardBusinessSO.jpg';
+import SothwestLogo from '../images/SouthwestAirlines.jpg';
+import TeradataLogo from '../images/Teradata.jpg';
+import AMLogo from '../images/AM.jpg';
+import {
+  SVGComponentProps,
+  PythonColorFullSvg,
+  JavaScriptSvg,
+  DjangoSvg,
+  ReactSvg,
+  AWSSvg,
+  DockerSvg,
+  FlaskSvg,
+  GoSvg,
+  ExpressSvg,
+  VueSvg,
+  AzureSvg,
+  FastApiSvg,
+} from '../components/svgs';
+
+import { IconType } from 'react-icons';
+import React from 'react';
+
+interface Cover {
+  name: string;
+  title: string;
+}
+
+interface AboutMe {
+  image: string;
+  text: string;
+}
+
+interface ContactCard {
+  icon: IconType;
+  url: string;
+  name: string;
+}
+
+interface WorkExperience {
+  companyLogo: string;
+  companyName: string;
+  headline: string;
+  startDate: string;
+  endDate?: string;
+  description: string;
+}
+
+export interface PortfolioProject {
+  name: string;
+  image: string;
+  description: string;
+  techStack: string[];
+  url: string;
+  sourceCodeUrl: string;
+}
+
+export interface Certification {
+  name: string;
+  image: string;
+  url: string;
+}
 
 interface Skill {
   name: string;
-  image: string;
+  icon: {
+    component: React.FC<SVGComponentProps>;
+    customProps?: SVGComponentProps;
+  };
   projects: string[];
 }
 
-const data: any = {};
+interface GithubRepoInfo {
+  url: string;
+  name?: string;
+}
 
-data.cover = {
-  image:
-    'https://images.unsplash.com/photo-1520034475321-cbe63696469a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80',
+interface NavigationAnchor {
+  name: string;
+  label: string;
+  anchor: string;
+}
+
+interface RenderData {
+  cover: Cover;
+  aboutMe: AboutMe;
+  contactCards: ContactCard[];
+  workExperiences: WorkExperience[];
+  portfolioProjects: PortfolioProject[];
+  skills: Skill[];
+  githubRepoInfo: GithubRepoInfo;
+  navigationAnchors: NavigationAnchor[];
+  certifications: Certification[];
+}
+
+const cover: Cover = {
   name: 'Aaron Garibay',
   title: 'Software Engineer',
 };
-data.aboutMe = {
+
+const aboutMe: AboutMe = {
   image:
     'https://media.licdn.com/dms/image/D5603AQFa4ZWxN3-LcQ/profile-displayphoto-shrink_800_800/0/1664861701724?e=1680134400&v=beta&t=-sVNun90inowV41PddQpHzvSKqfwcpv2UAeFM_mW_bM',
-  text: 'I am a software engineer with 5 years of experience in building scalable and high-performance web applications. I am proficient in JavaScript, React, and Node.js. I am also experienced in working with databases such as MySQL and MongoDB.',
+  text: 'Software Engineer with +4 years of experience designing, and implementing customer-oriented, production-ready software with Python for Backend, and Cloud Technologies; Participating in international English-spoken organizations, experienced in green field, and brown field environments. I’ve released products used for top S&P 500 companies, this possible by being part of world-class software engineer teams using agile methodologies.',
 };
 
-data.contactInfo = [
+const contactCards: ContactCard[] = [
   {
-    icon: linkedInIcon,
+    icon: FaLinkedin,
     url: 'https://linkedin.com/in/aarongaribay',
     name: 'LinkedIn',
   },
   {
-    icon: gmailIcon,
+    icon: FaAt,
     url: 'mailto:hola@aarongaribay.com',
     name: 'Email',
   },
   {
-    icon: 'https://static.vecteezy.com/system/resources/previews/002/205/865/original/employee-resume-icon-free-vector.jpg',
+    icon: FaUserAlt,
     url: 'https://drive.google.com/path/to/resume.pdf',
     name: 'Resume',
   },
 ];
-data.workExperience = [
+const workExperiences: WorkExperience[] = [
   {
-    companyLogo: teradataLogo,
-    companyName: 'Teradata',
+    companyLogo: HarvardLogo,
+    companyName: 'Harvard Business School Online',
     headline: 'Backend Developer',
-    timeWindow: 'Jan 2020 - Present',
+    startDate: 'Nov 2022',
     description: "I'm a backend developer at Company 1.",
   },
   {
-    companyLogo: teradataLogo,
-    companyName: 'Teradata',
+    companyLogo: SothwestLogo,
+    companyName: 'Southwest Airlines',
     headline: 'Backend Developer',
-    timeWindow: 'Jan 2020 - Present',
+    startDate: 'Jan 2020',
+    endDate: 'Dec 2020',
     description: "I'm a backend developer at Company 1.",
   },
   {
-    companyLogo: teradataLogo,
+    companyLogo: TeradataLogo,
     companyName: 'Teradata',
     headline: 'Backend Developer',
-    timeWindow: 'Jan 2020 - Present',
+    startDate: 'Jan 2020',
+    endDate: 'Dec 2020',
     description: "I'm a backend developer at Company 1.",
   },
   {
-    companyLogo: teradataLogo,
+    companyLogo: AMLogo,
     companyName: 'Teradata',
     headline: 'Backend Developer',
-    timeWindow: 'Jan 2020 - Present',
+    startDate: 'Jan 2020',
+    endDate: 'Dec 2020',
     description: "I'm a backend developer at Company 1.",
   },
 ];
 
-data.githubRepoInfo = {
+const githubRepoInfo: GithubRepoInfo = {
   url: 'https://github.com/aHardReset/aHardReset.github.io',
 };
 
-data.portfolioProjects = [
+const portfolioProjects: PortfolioProject[] = [
   {
     name: 'Project 1',
     image:
@@ -120,60 +207,111 @@ data.portfolioProjects = [
   },
 ];
 
-const skills: Skill[] = [
+const certifications: Certification[] = [
   {
-    name: 'JavaScript',
+    name: 'Microsoft Certified: Azure Fundamentals',
     image:
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/480px-Unofficial_JavaScript_logo_2.svg.png',
-    projects: ['Project 1', 'Project 2', 'Project 3'],
+      'https://images.credly.com/size/340x340/images/be8fcaeb-c769-4858-b567-ffaaa73ce8cf/image.png',
+    url: 'https://www.credly.com/badges/e4ee4a36-86ac-4525-8aa6-98768974165a',
   },
   {
-    name: 'Python',
-    image:
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1869px-Python-logo-notext.svg.png',
-    projects: ['Project 4', 'Project 5', 'Project 6'],
-  },
-  {
-    name: 'JavaScript',
-    image:
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/480px-Unofficial_JavaScript_logo_2.svg.png',
-    projects: ['Project 1', 'Project 2', 'Project 3'],
-  },
-  {
-    name: 'Python',
-    image:
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1869px-Python-logo-notext.svg.png',
-    projects: ['Project 4', 'Project 5', 'Project 6'],
-  },
-  {
-    name: 'JavaScript',
-    image:
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/480px-Unofficial_JavaScript_logo_2.svg.png',
-    projects: ['Project 1', 'Project 2', 'Project 3'],
-  },
-  {
-    name: 'Python',
-    image:
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1869px-Python-logo-notext.svg.png',
-    projects: ['Project 4', 'Project 5', 'Project 6'],
-  },
-  {
-    name: 'JavaScript',
-    image:
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/480px-Unofficial_JavaScript_logo_2.svg.png',
-    projects: ['Project 1', 'Project 2', 'Project 3'],
-  },
-  {
-    name: 'Python',
-    image:
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1869px-Python-logo-notext.svg.png',
-    projects: ['Project 4', 'Project 5', 'Project 6'],
+    name: 'Linux Professional Institute: Linux Essentials',
+    image: 'https://www.lpi.org/sites/all/themes/lpi/images/logo.png',
+    url: 'https://cs.lpi.org/caf/Xamman/certification/verify/LPI000511561/xng3csum9n',
   },
 ];
 
-data.skills = skills;
+const skills: Skill[] = [
+  {
+    name: 'Python',
+    icon: {
+      component: PythonColorFullSvg,
+    },
+    projects: ['Project 1', 'Project 2', 'Project 3'],
+  },
+  {
+    name: 'Django',
+    icon: {
+      component: DjangoSvg,
+      customProps: {
+        fill: '#092E20',
+      },
+    },
+    projects: ['Project 7', 'Project 8', 'Project 9'],
+  },
+  {
+    name: 'FastAPI',
+    icon: {
+      component: FastApiSvg,
+    },
+    projects: ['Project 7', 'Project 8', 'Project 9'],
+  },
+  {
+    name: 'Flask',
+    icon: {
+      component: FlaskSvg,
+    },
+    projects: ['Project 7', 'Project 8', 'Project 9'],
+  },
+  {
+    name: 'Express',
+    icon: {
+      component: ExpressSvg,
+    },
+    projects: ['Project 7', 'Project 8', 'Project 9'],
+  },
+  {
+    name: 'Go',
+    icon: {
+      component: GoSvg,
+    },
+    projects: ['Project 7', 'Project 8', 'Project 9'],
+  },
+  {
+    name: 'Amazon Web Services',
+    icon: {
+      component: AWSSvg,
+    },
+    projects: ['Project 1', 'Project 2', 'Project 3'],
+  },
+  {
+    name: 'Microsoft Azure',
+    icon: {
+      component: AzureSvg,
+    },
+    projects: ['Project 1', 'Project 2', 'Project 3'],
+  },
+  {
+    name: 'Docker',
+    icon: {
+      component: DockerSvg,
+    },
+    projects: ['Project 4', 'Project 5', 'Project 6'],
+  },
+  {
+    name: 'JavaScript',
+    icon: {
+      component: JavaScriptSvg,
+    },
+    projects: ['Project 4', 'Project 5', 'Project 6'],
+  },
+  {
+    name: 'React',
+    icon: {
+      component: ReactSvg,
+    },
+    projects: ['Project 7', 'Project 8', 'Project 9'],
+  },
+  {
+    name: 'VueJs',
+    icon: {
+      component: VueSvg,
+    },
+    projects: ['Project 7', 'Project 8', 'Project 9'],
+  },
+];
 
-data.navigationAnchors = [
+const navigationAnchors: NavigationAnchor[] = [
   {
     name: 'ContactInfo',
     label: 'Get in touch',
@@ -200,5 +338,17 @@ data.navigationAnchors = [
     anchor: '#blog-posts',
   },
 ];
+
+const data: RenderData = {
+  cover,
+  aboutMe,
+  contactCards,
+  workExperiences,
+  githubRepoInfo,
+  portfolioProjects,
+  skills,
+  navigationAnchors,
+  certifications,
+};
 
 export default data;

@@ -1,0 +1,63 @@
+.certifications {
+  padding: 2rem 0;
+}
+
+@media (min-width: 768px) {
+  .certifications {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+}
+
+.certifications-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.certification-card {
+  background-color: #34495e;
+  border-radius: 10px;
+  width: 200px;
+  margin: 1rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.certification-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.certification-card img {
+  padding: 15px;
+  height: 80%;
+  width: 100%;
+  object-fit: contain;
+}
+
+.certification-footer {
+  color: #fff;
+  padding-bottom: 1rem;
+  font-weight: bold;
+}
+
+.certification-button-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+}
+
+.certification-footer {
+  color: #fff;
+  margin-top: 15px;
+  font-weight: bold;
+}
