@@ -1,6 +1,7 @@
 import { useState } from 'react';
+import { FaMedium } from 'react-icons/fa';
 import data, {
-  PortfolioProject,
+  // PortfolioProject,
   Certification,
 } from '../assets/data/renderData';
 
@@ -16,6 +17,7 @@ import './assets/styles/BlogPosts.css';
 import './assets/styles/Certifications.css';
 
 const loadMoreDefault = false;
+const expandedIndexDefault = -1;
 
 function Cover() {
   const cover = data.cover;
@@ -79,11 +81,15 @@ TODO:
 
 function WorkExperience() {
   const [loadMore, setLoadMore] = useState(loadMoreDefault);
+  const [expandedIndex, setExpandedIndex] = useState(expandedIndexDefault);
 
   const workExperiences = data.workExperiences;
 
   const toggleLoadMoreExperience = () => {
     setLoadMore(!loadMore);
+  };
+  const toggleDescription = (index: number) => {
+    setExpandedIndex(expandedIndex === index ? -1 : index);
   };
   return (
     <div id='work-experience' className='common-container'>
@@ -93,7 +99,7 @@ function WorkExperience() {
       <div className='experience-content common-container-desktop'>
         {workExperiences
           .slice(0, loadMore ? workExperiences.length : 3)
-          .map(item => (
+          .map((item, index) => (
             <div key={item.companyName} className='work-item'>
               <img
                 src={item.companyLogo}
@@ -111,12 +117,29 @@ function WorkExperience() {
                   </div>
                 </div>
 
-                <div className='description'>{item.description}</div>
+                <div className='description'>
+                  {expandedIndex === index || item.description.length <= 300
+                    ? item.description
+                    : `${item.description
+                        .substring(0, 300)
+                        .split(' ')
+                        .slice(0, -1)
+                        .join(' ')}... `}
+                  {item.description.length > 300 &&
+                    !(expandedIndex === index) && (
+                      <a
+                        onClick={() => toggleDescription(index)}
+                        className='read-more'
+                      >
+                        Read More
+                      </a>
+                    )}
+                </div>
               </div>
             </div>
           ))}
         {/* workExperiences.length > 3 && !loadMore && ( */}
-        {workExperiences.length > 3 && (
+        {workExperiences.length > 3 && !loadMore && (
           <div
             onClick={toggleLoadMoreExperience}
             className='toggle-load-more-experience-container'
@@ -129,6 +152,7 @@ function WorkExperience() {
   );
 }
 
+/*
 function PortfolioProjectComponent({
   name,
   image,
@@ -193,6 +217,7 @@ function PortfolioProjects() {
     </div>
   );
 }
+*/
 
 function CertificationComponent({ name, image, url }: Certification) {
   return (
@@ -247,7 +272,12 @@ const ReadMyBlog = () => {
             target='_blank'
             rel='noreferrer noopener'
           >
-            <div className='read-my-blog-button'>Read My Blog</div>
+            <div className='read-my-blog-button'>
+              <div className='read-my-blog-button-icon'>
+                <FaMedium />
+              </div>
+              Read My Blog
+            </div>
           </a>
         </div>
       </div>

@@ -1,9 +1,10 @@
-import { FaLinkedin, FaAt, FaUserAlt, FaMedium } from 'react-icons/fa';
+import { FaLinkedin, FaAt, FaUserAlt } from 'react-icons/fa';
 
 import HarvardLogo from '../images/HarvardBusinessSO.jpg';
 import SothwestLogo from '../images/SouthwestAirlines.jpg';
 import TeradataLogo from '../images/Teradata.jpg';
 import AMLogo from '../images/AM.jpg';
+import IntegranetLogo from '../images/Integranet.jpg';
 import {
   SVGComponentProps,
   PythonColorFullSvg,
@@ -103,7 +104,7 @@ const cover: Cover = {
 const aboutMe: AboutMe = {
   image:
     'https://media.licdn.com/dms/image/D5603AQFa4ZWxN3-LcQ/profile-displayphoto-shrink_800_800/0/1664861701724?e=1680134400&v=beta&t=-sVNun90inowV41PddQpHzvSKqfwcpv2UAeFM_mW_bM',
-  text: 'Software Engineer with +4 years of experience designing, and implementing customer-oriented, production-ready software with Python for Backend, and Cloud Technologies; Participating in international English-spoken organizations, experienced in green field, and brown field environments. I’ve released products used for top S&P 500 companies, this possible by being part of world-class software engineer teams using agile methodologies.',
+  text: "I'm an experienced software engineer with +4 years in the field. Proficient in Python for backend development, frontend and cloud technologies. Part of international, English-speaking teams using agile methodologies to deliver production-ready software to top S&P 500 companies. Skilled in green field and brown field environments.",
 };
 
 const contactCards: ContactCard[] = [
@@ -119,7 +120,7 @@ const contactCards: ContactCard[] = [
   },
   {
     icon: FaUserAlt,
-    url: 'https://drive.google.com/path/to/resume.pdf',
+    url: 'https://docs.google.com/document/d/1ghcsS1Z06mpA8VnRaP4UF2BKhNtOXS3naB30l02qGAk/edit?usp=sharing',
     name: 'Resume',
   },
 ];
@@ -127,33 +128,46 @@ const workExperiences: WorkExperience[] = [
   {
     companyLogo: HarvardLogo,
     companyName: 'Harvard Business School Online',
-    headline: 'Backend Developer',
+    headline: 'Software Engineer',
     startDate: 'Nov 2022',
-    description: "I'm a backend developer at Company 1.",
+    description:
+      'I am currently working as a backend developer using the Django framework and Python, and also contributing to testing and frontend development with Vue.js and JavaScript.',
   },
   {
     companyLogo: SothwestLogo,
     companyName: 'Southwest Airlines',
-    headline: 'Backend Developer',
-    startDate: 'Jan 2020',
-    endDate: 'Dec 2020',
-    description: "I'm a backend developer at Company 1.",
+    headline: 'Software Engineer',
+    startDate: 'Mar 2022',
+    endDate: 'Nov 2022',
+    description:
+      'During my time at Southwest Airlines, I was focused on improving the efficiency and productivity of the team. I achieved this by leveraging cloud technology and utilizing Amazon Web Services such as VPC, EC2, and Cloud Formation. I developed re-usable modules and implemented automatic IP allocation, resulting in significant time savings for the team. My expertise in Python, AWS, and Agile methodologies was crucial in delivering these successful projects.',
   },
   {
     companyLogo: TeradataLogo,
     companyName: 'Teradata',
-    headline: 'Backend Developer',
-    startDate: 'Jan 2020',
-    endDate: 'Dec 2020',
-    description: "I'm a backend developer at Company 1.",
+    headline: 'Software Engineer',
+    startDate: 'May 2021',
+    endDate: 'Apr 2022',
+    description:
+      'At Teradata, I was focused on streamlining processes and improving customer satisfaction. I achieved this by designing and implementing an automatic rule using Python, which saved 120,000 hours annually in the diagnosis of troubleshooting customer nodes. I also fully automated data extraction and parsing, saving an additional 60,000 hours annually. Through my work, I developed a recommendation system for troubleshooting customer nodes, saving an additional 120,000 hours in research. I also streamlined CI pipelines, saving 390 hours annually for refreshing business intelligence databases and dashboards. My expertise in Python, Agile methodologies, and data structures was crucial in delivering these successful projects.',
   },
   {
     companyLogo: AMLogo,
-    companyName: 'Teradata',
-    headline: 'Backend Developer',
-    startDate: 'Jan 2020',
-    endDate: 'Dec 2020',
-    description: "I'm a backend developer at Company 1.",
+    companyName: 'Artificial Makers',
+    headline: 'Software Engineer',
+    startDate: 'Mar 2020',
+    endDate: 'May 2021',
+    description:
+      'As part of a 4-person initiative, I contributed to the development of AR/VR/AI applications with cloud service integrations, integrating geodata APIs and cloud database services in AR/VR android apps using C#, Firestore, and AWS S3 within a Unity3D environment. I also developed an end-to-end intelligent document parser using cloud cognitive services and Python, fine-tuning the AI detection for the tool, which is still being used in the supply chain industry today.',
+  },
+  {
+    companyLogo: IntegranetLogo,
+    companyName: 'Integranet',
+    headline: 'IoT Leader Engineer',
+    startDate: 'Feb 2019',
+    endDate: 'Mar 2020',
+    description:
+      'At Integranet, I was involved in improving the lifetime and quality of agricultural products by 10% and 8% respectively. This was achieved through the programming and design of an IoT monitoring system that automates cooling systems using technologies such as JavaScript, Python, and AWS services.',
   },
 ];
 
@@ -268,7 +282,7 @@ const skills: Skill[] = [
     projects: ['Project 7', 'Project 8', 'Project 9'],
   },
   {
-    name: 'Amazon Web Services',
+    name: 'AWS',
     icon: {
       component: AWSSvg,
     },
@@ -322,14 +336,21 @@ const navigationAnchors: NavigationAnchor[] = [
     label: 'My Work Experience',
     anchor: '#work-experience',
   },
+  /*
   {
     name: 'PortfolioProjects',
     label: 'See My Portfolio Projects',
     anchor: '#portfolio-projects',
   },
+  */
+  {
+    name: 'Certifications',
+    label: 'My Professional Certifications',
+    anchor: '#certifications',
+  },
   {
     name: 'Skills',
-    label: 'Check My Skill Set',
+    label: 'Look To My Skill Set',
     anchor: '#skills',
   },
   {

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
 
 import data from '../assets/data/renderData';
-import ahr from './assets/images/ahr.png';
+import { AUnderline } from '../assets/components/svgs';
 
 import './assets/styles/Navbar.css';
 
@@ -40,7 +40,7 @@ const Navbar = () => {
       <FaBars className='navbar-hamburger-menu' onClick={() => setOpen(true)} />
       <Menu />
       <div className='navbar-brand-logo'>
-        <img src={ahr} alt='logo' />
+        <AUnderline />
       </div>
     </nav>
   );
