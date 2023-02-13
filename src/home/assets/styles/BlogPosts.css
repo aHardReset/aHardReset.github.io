@@ -1,0 +1,42 @@
+.read-my-blog {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.read-my-blog h2 {
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.read-my-blog-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.read-my-blog-button {
+  background-color: #3498db;
+  color: #fff;
+  border-radius: 10px;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.read-my-blog-button-icon {
+  margin-right: 0.5rem;
+}
+
+.read-my-blog-button-container a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.read-my-blog-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}

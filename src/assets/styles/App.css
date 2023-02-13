@@ -1,0 +1,17 @@
+/* Remove default browser styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Manrope', serif;
+}
+
+/* Remove border for images */
+img {
+  border: 0;
+}
+
+/* add a default background color */
+body {
+  background-color: black;
+}

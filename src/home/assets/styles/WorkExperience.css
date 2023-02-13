@@ -1,0 +1,112 @@
+.experience-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 100%;
+}
+
+.work-item {
+  background-color: #34495e;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 2rem;
+  transition: all 0.3s ease;
+}
+
+/* add a transform: scale(1.1); to work-item on hover */
+.work-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.company-logo {
+  width: 15%;
+  padding: 10px;
+}
+
+@media (max-width: 768px) {
+  .company-logo {
+    width: 20%;
+    margin-bottom: 1rem;
+  }
+}
+
+.work-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 75%;
+  padding: 2rem 0;
+}
+
+@media (max-width: 768px) {
+  .work-info {
+    width: 100%;
+  }
+}
+
+.company-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 0.5rem;
+  min-height: 1.5rem;
+}
+
+.headline-time-window {
+  display: flex;
+  align-items: flex-end;
+  height: 100%;
+}
+
+.headline {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 1.3rem;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.time-window {
+  font-size: 1rem;
+  color: gray;
+  margin-bottom: 0.5rem;
+  height: 100%;
+  padding-left: 1.5rem;
+  /* add an italic style*/
+  font-style: italic;
+}
+
+.description {
+  font-size: 1.2rem;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.read-more {
+  color: #fff;
+  font-size: 1.2rem;
+  text-decoration: underline;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+.toggle-load-more-experience-container .toggle-load-more-experience {
+  background-color: #3498db;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.toggle-load-more-experience-container .toggle-load-more-experience:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}

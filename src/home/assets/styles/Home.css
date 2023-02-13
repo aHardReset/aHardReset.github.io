@@ -1,0 +1,65 @@
+.home {
+  background-color: #2f3542;
+  padding-top: 60px; /* this should match the height of the navbar + 10%*/
+  min-height: calc(
+    100vh - 80px
+  ); /* this will ensure that the home component takes up the remaining space on the screen */
+}
+
+.common-container {
+  padding: 60px 1.5rem 1.5rem 1.5rem;
+}
+
+.common-container:hover {
+  background-color: #456370;
+}
+
+@media (min-width: 768px) {
+  .common-container-desktop {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+}
+
+.common-container-header-container {
+  align-items: center;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.common-container-header {
+  text-align: center;
+  width: 100%;
+  font-weight: bold;
+  color: #dcdcdc;
+}
+
+.common-primary-button {
+  background-color: #3498db;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.common-primary-button:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.common-secondary-button {
+  background-color: #2f3542;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.common-secondary-button:hover {
+  background-color: #363c49;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
