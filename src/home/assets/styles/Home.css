@@ -10,6 +10,12 @@
   padding: 60px 1.5rem 1.5rem 1.5rem;
 }
 
+@media (max-width: 768px) {
+  .common-container {
+    padding: 60px 0 1.5rem 0;
+  }
+}
+
 .common-container:hover {
   background-color: #456370;
 }

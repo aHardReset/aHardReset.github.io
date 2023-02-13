@@ -231,7 +231,9 @@ function CertificationComponent({ name, image, url }: Certification) {
           target='_blank'
           rel='noreferrer noopener'
         >
-          {'See Certification Verification'}
+          <p className='certification-button-p'>
+            {'See Certification Verification'}
+          </p>
         </a>
       </div>
     </div>

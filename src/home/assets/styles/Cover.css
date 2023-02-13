@@ -20,6 +20,12 @@
   margin-bottom: 10px;
 }
 
+@media (max-width: 768px) {
+  .name {
+    font-size: 40px;
+  }
+}
+
 .name:hover {
   text-shadow: 2px 2px 4px #2980b9;
 }

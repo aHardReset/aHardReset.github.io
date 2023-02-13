@@ -289,7 +289,7 @@ const skills: Skill[] = [
     projects: ['Project 1', 'Project 2', 'Project 3'],
   },
   {
-    name: 'Microsoft Azure',
+    name: 'Azure',
     icon: {
       component: AzureSvg,
     },
