@@ -14,7 +14,7 @@
 
 .name {
   font-size: 72px;
-  font-family: 'Lobster', serif;
+  font-family: 'Roboto', serif;
   text-shadow: 2px 2px 4px #3498db;
   color: white;
   margin-bottom: 10px;
@@ -32,7 +32,7 @@
 
 .title {
   font-size: 36px;
-  font-family: 'Lobster', serif;
+  font-family: 'Roboto', serif;
   font-weight: lighter;
   text-shadow: 1px 1px 2px #3498db;
   color: gainsboro;
