@@ -5,6 +5,7 @@ import SothwestLogo from '../images/SouthwestAirlines.jpg';
 import TeradataLogo from '../images/Teradata.jpg';
 import AMLogo from '../images/AM.jpg';
 import IntegranetLogo from '../images/Integranet.jpg';
+import ProfilePicture from '../images/ProfilePicture.jpeg';
 import {
   SVGComponentProps,
   PythonColorFullSvg,
@@ -102,8 +103,7 @@ const cover: Cover = {
 };
 
 const aboutMe: AboutMe = {
-  image:
-    'https://media.licdn.com/dms/image/D5603AQFa4ZWxN3-LcQ/profile-displayphoto-shrink_800_800/0/1664861701724?e=1680134400&v=beta&t=-sVNun90inowV41PddQpHzvSKqfwcpv2UAeFM_mW_bM',
+  image: ProfilePicture,
   text: "I'm an experienced software engineer with +4 years in the field. Proficient in Python for backend development, frontend and cloud technologies. Part of international, English-speaking teams using agile methodologies to deliver production-ready software to top S&P 500 companies. Skilled in green field and brown field environments.",
 };
 
