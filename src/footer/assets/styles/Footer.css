@@ -24,9 +24,28 @@
   margin-bottom: 0.5rem;
 }
 
+@media (max-width: 768px) {
+  .footer-icon {
+    width: 20px;
+    height: 20px;
+  }
+}
+
 .footer-link-text {
   color: #fff;
   font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .footer-link-text {
+    font-size: small;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-button {
+    font-size: smaller;
+  }
 }
 
 .footer-right .footer-button {
