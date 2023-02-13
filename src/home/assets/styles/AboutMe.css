@@ -1,6 +1,13 @@
 .about-me-container {
   display: flex;
   align-items: center;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .about-me-container {
+    flex-direction: row;
+  }
 }
 
 .about-me-img {
@@ -10,6 +17,15 @@
   border-radius: 50%;
   margin-right: 2rem;
   box-shadow: 0 10px 20px #3498db, 0 6px 6px #3498db;
+}
+
+@media (max-width: 768px) {
+  .about-me-img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+    margin-right: 0;
+  }
 }
 
 .about-me-img:hover {
