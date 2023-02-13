@@ -1,6 +1,7 @@
 {
   "name": "vite-react-ts-template-2",
   "private": true,
+  "homepage": "https://ahardreset.github.io/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
@@ -11,6 +12,7 @@
     "lint": "npx eslint --fix . --ext .js,.tsx,.ts,.jsx"
   },
   "dependencies": {
+    "gh-pages": "^5.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.7.1",
